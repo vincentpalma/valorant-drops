@@ -9,7 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.support.ui import Select
 
-valid_accounts = {'DfsGUhyLwu':'Cotonchien55'}
+valid_accounts = {'sike':'nopasswordhere'}
 proxies = ['51.158.180.179:8811','94.23.253.212:8080','82.119.170.106:8080','51.79.52.62:3128',
 '176.31.141.22:51327','151.80.201.162:1080','178.33.14.216:9999','163.172.189.32:8811','51.158.180.179:8811',
 '51.158.123.250:8811','51.158.165.18:8811','163.172.190.160:8811','51.158.172.165:8811','94.23.253.212:8080',
@@ -22,7 +22,7 @@ proxies = ['51.158.180.179:8811','94.23.253.212:8080','82.119.170.106:8080','51.
 ip = proxies[0].split(':')[0]
 port = proxies[0].split(':')[1]
 
-stream_url = 'https://www.twitch.tv/summit1g'
+stream_url = 'https://www.twitch.tv/onscreen'
 
 import random
 import string
@@ -109,33 +109,6 @@ def check_proxy(proxy):
     print(f'PROXY FAILED TO CONNECT TO {ip}')
     print('IPv4 is :',soup.text)
     return False
-
-def check_ping():
-  t = time.time()
-  driver.get('https://www.twitch.tv/')
-  while time.time() - t < 7:
-    driver.find_element_by_css_selector("button[data-a-target='signup-button']").click()
-  z = time.time()
-  if z-t < 7:
-    return True
-  driver.Quit()
-  return False
-    
  
-
-# Check valid proxies
-
-# valid_proxies = []
-# for proxy in proxies:
-#   chrome_options = webdriver.ChromeOptions()
-#   chrome_options.add_argument(f'--proxy-server={proxy}')
-
-#   driver = webdriver.Chrome(chrome_options=chrome_options)
-#   a = check_proxy(proxy)
-#   if a:
-#     valid_proxies.append(proxy)
-#   driver.quit()
-#   print(valid_proxies)
-
-pickle.dump(valid_proxies,open("valid_proxies.txt","wb"))
-# create_twitch_account("fovbizqimiqki","Martinchien55","valorvolvikacc")
+ 
+create_twitch_account("sexyname","password","email")
